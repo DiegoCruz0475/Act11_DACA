@@ -177,7 +177,7 @@ class CasasRentaPage extends StatelessWidget {
             "\$10,000",
             "Juan Pérez",
             "Av. de la Raza #123",
-            "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=400",
+            "https://raw.githubusercontent.com/DiegoCruz0475/Act8_listview_Cruz_0475/refs/heads/main/casa1.jpg",
           ),
           _buildCasaCard(
             "Villa del Sol",
@@ -185,7 +185,7 @@ class CasasRentaPage extends StatelessWidget {
             "\$8,900",
             "Maria Garcia",
             "Col. Jardines, Calle 5",
-            "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=400",
+            "https://raw.githubusercontent.com/DiegoCruz0475/Act8_listview_Cruz_0475/refs/heads/main/casa2.jpg",
           ),
           _buildCasaCard(
             "Loft Moderno",
@@ -193,7 +193,7 @@ class CasasRentaPage extends StatelessWidget {
             "\$15,000",
             "Inmobiliaria Yeyo",
             "Zona Centro, Edificio A",
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400",
+            "https://raw.githubusercontent.com/DiegoCruz0475/Act8_listview_Cruz_0475/refs/heads/main/casa3.jpg",
           ),
         ],
       ),
