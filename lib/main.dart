@@ -9,10 +9,10 @@ void main() {
 }
 
 // --- CONFIGURACIÓN DE COLORES ---
-const Color azulPrimario = Color(0xFF0D47A1); // Azul formal oscuro
-const Color azulLlamativo = Color(0xFF1976D2); // Azul vibrante
-const Color cafeMenu = Color(0xFF6D4C41);      // Café para el botón lateral
-const Color azulFondo = Color(0xFFF5F7FA);     // Fondo grisáceo azulado
+const Color azulPrimario = Color(0xFF0D47A1); 
+const Color azulLlamativo = Color(0xFF1976D2); 
+const Color cafeMenu = Color(0xFF6D4C41);      
+const Color azulFondo = Color(0xFFF5F7FA);     
 
 // --- PANTALLA 1: INICIO ---
 class InicioPage extends StatelessWidget {
@@ -52,7 +52,6 @@ class InicioPage extends StatelessWidget {
                 ],
               ),
 
-              // Botones principales en orden
               _buildMenuButton(context, "Casas en venta", Icons.sell, azulLlamativo, null),
               _buildMenuButton(context, "Casas en renta", Icons.key, azulLlamativo, const CasasRentaPage()),
               _buildMenuButton(context, "Contacto", Icons.contact_mail, azulLlamativo, null),
@@ -60,7 +59,6 @@ class InicioPage extends StatelessWidget {
 
               const SizedBox(height: 50),
 
-              // Pie de página con imagen de casa centrada
               const Center(
                 child: Column(
                   children: [
@@ -94,7 +92,6 @@ class InicioPage extends StatelessWidget {
     );
   }
 
-  // Widget para botones de menú
   Widget _buildMenuButton(BuildContext context, String texto, IconData icono, Color color, Widget? destino) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
@@ -116,7 +113,6 @@ class InicioPage extends StatelessWidget {
     );
   }
 
-  // Botón café (1/6 del tamaño)
   Widget _buildBotonCafe() {
     return Container(
       height: 58,
@@ -155,7 +151,6 @@ class CasasRentaPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          // Botón de navegación (Pequeño café a la derecha)
           Align(
             alignment: Alignment.centerRight,
             child: Container(
@@ -170,14 +165,13 @@ class CasasRentaPage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          // Listado de casas
           _buildCasaCard(
             "Residencial Los Olivos",
             "\$12,500",
             "\$10,000",
             "Juan Pérez",
             "Av. de la Raza #123",
-            "https://raw.githubusercontent.com/DiegoCruz0475/Act8_listview_Cruz_0475/refs/heads/main/casa1.jpg",
+            "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=400",
           ),
           _buildCasaCard(
             "Villa del Sol",
@@ -185,7 +179,7 @@ class CasasRentaPage extends StatelessWidget {
             "\$8,900",
             "Maria Garcia",
             "Col. Jardines, Calle 5",
-            "https://raw.githubusercontent.com/DiegoCruz0475/Act8_listview_Cruz_0475/refs/heads/main/casa2.jpg",
+            "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=400",
           ),
           _buildCasaCard(
             "Loft Moderno",
@@ -193,14 +187,13 @@ class CasasRentaPage extends StatelessWidget {
             "\$15,000",
             "Inmobiliaria Yeyo",
             "Zona Centro, Edificio A",
-            "https://raw.githubusercontent.com/DiegoCruz0475/Act8_listview_Cruz_0475/refs/heads/main/casa3.jpg",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400",
           ),
         ],
       ),
     );
   }
 
-  // Widget para cada contenedor de casa
   Widget _buildCasaCard(String nombre, String precio, String deposito, String vendedor, String ubicacion, String url) {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
@@ -210,7 +203,11 @@ class CasasRentaPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         border: Border.all(color: Colors.black12),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 5),
+          // CAMBIO: Usando withValues en lugar de withOpacity
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05), 
+            blurRadius: 5,
+          ),
         ],
       ),
       child: Row(
@@ -221,7 +218,8 @@ class CasasRentaPage extends StatelessWidget {
             height: 85,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: azulPrimario.withOpacity(0.5), width: 2),
+              // CAMBIO: Usando withValues en lugar de withOpacity
+              border: Border.all(color: azulPrimario.withValues(alpha: 0.5), width: 2),
               image: DecorationImage(
                 image: NetworkImage(url),
                 fit: BoxFit.cover,
@@ -230,12 +228,10 @@ class CasasRentaPage extends StatelessWidget {
           ),
           const SizedBox(width: 15),
 
-          // Datos de la casa (Derecha)
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Título azul, fondo blanco, borde negro
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
