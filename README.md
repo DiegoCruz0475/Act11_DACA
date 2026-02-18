@@ -1,3 +1,13 @@
+# Web
+
+<img width="1176" height="741" alt="image" src="https://github.com/user-attachments/assets/29559e8d-d383-429e-831b-98af4a76ffbd" />
+
+
+# Android
+
+<img width="1410" height="2000" alt="Diseño sin título" src="https://github.com/user-attachments/assets/ffc355ae-f13d-43ef-998b-eb1d8915e0fe" />
+
+
 # myapp
 
 A new Flutter project.
